@@ -1,0 +1,57 @@
+https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-tutorial-create-basic-bot?view=azure-bot-service-4.0&tabs=python%2Cvs
+Prerequisites
+Python 3.6, 3.7, or 3.8
+Bot Framework Emulator
+Knowledge of asynchronous programming in Python
+ Tip
+
+Some developers may find it useful to create Python bots in a virtual environment. The steps below will work regardless if you're developing in a virtual environment or on your local machine.
+
+Templates
+Install the necessary packages by running the following commands:
+
+cmd
+
+Copy
+pip install botbuilder-core
+pip install asyncio
+pip install aiohttp
+pip install cookiecutter==1.7.0
+The last package, cookiecutter, will be used to generate your bot. Verify that it was installed correctly by running cookiecutter --help.
+
+Create a bot
+Python
+To create your bot, navigate to the directory you want your bot created in, then run:
+
+cmd
+
+Copy
+cookiecutter https://github.com/microsoft/BotBuilder-Samples/releases/download/Templates/echo.zip
+This command copies all needed files from GitHub to create an Echo Bot based on the Python echo template. You will be prompted for the name of the bot and a description. Name your bot echo-bot and set the description to A bot that echoes back user response. as shown below:
+
+set name and description
+
+Start your bot
+Python
+From a terminal navigate to the echo-bot folder where you saved your bot. Run pip install -r requirements.txt to install any required packages to run your bot.
+
+Once the packages are installed run python app.py to start your bot. You will know your bot is ready to test when you see the last line shown in the screenshot below:
+
+bot running locally
+
+Copy the last for digits in the address on the last line (usually 3978) since you will be using them in the next step. You are now ready to start the Emulator.
+
+Start the Emulator and connect your bot
+Start the Bot Framework Emulator.
+
+Select Open Bot on the Emulator's Welcome tab.
+
+Enter your bot's URL, which is the URL of the local port, with /api/messages added to the path, typically http://localhost:3978/api/messages.
+
+open a bot
+
+Then select Connect.
+
+Send a message to your bot, and the bot will respond back.
+
+echo message
